@@ -1,6 +1,6 @@
 # puppet-module-nfsen
 
-  A puppet module installs/configures/manages nfsen.
+  A puppet module that installs/configures/manages nfsen.
 
 ## Parameters
 
