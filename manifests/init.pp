@@ -119,6 +119,11 @@ class nfsen ( $use_ramdisk        = false,
         require   => [ File['/opt/nfsen/etc/nfsen.conf'], User[$user] ]
       }
 
+      file { "$basedir/etc/nfsen.conf":
+        content => template('nfsen/nfsen.conf.erb'),
+        ensure  => file,
+      }
+
       file { '/opt/nfsen':
         ensure  => 'directory',
         recurse => true,
