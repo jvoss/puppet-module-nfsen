@@ -122,6 +122,7 @@ class nfsen ( $use_ramdisk        = false,
       file { "$basedir/etc/nfsen.conf":
         content => template('nfsen/nfsen.conf.erb'),
         ensure  => file,
+        before  => Service['nfsen']
       }
 
       file { '/opt/nfsen':
