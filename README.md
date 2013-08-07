@@ -24,9 +24,9 @@
  $filterdir::          String. Default '${BASEDIR}/filters'
  $formatdir::          String. Default '${BASEDIR}/fmt',
  $profilestatdir::     String. Default '${BASEDIR}/profiles-stat',
- $profiledatadir::     String. Default "#{BASEDIR}/profiles-data',
- $backend_plugindir::  String. Default "#{BASEDIR}/plugins',
- $frontend_plugindir:: String. Default "#{HTMLDIR}/plugins',
+ $profiledatadir::     String. Default "${BASEDIR}/profiles-data',
+ $backend_plugindir::  String. Default "${BASEDIR}/plugins',
+ $frontend_plugindir:: String. Default "${HTMLDIR}/plugins',
  $prefix::             String. Default '/usr/bin',
  $commsocket::         String. Default '${PIDDIR}/nfsen.comm',
  $user::               String. Default 'netflow',
