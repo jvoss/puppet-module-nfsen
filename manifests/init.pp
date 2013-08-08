@@ -119,10 +119,18 @@ class nfsen ( $use_ramdisk        = false,
         require   => [ File['/opt/nfsen/etc/nfsen.conf'], User[$user] ]
       }
 
+      exec { 'nfsen-reconfig':
+        command     => 'nfsen reconfig',
+        path        => "/usr/bin:$basedir/bin",
+        refreshonly => true,
+        subscribe   => File["$basedir/etc/nfsen.conf"]
+      }
+
       file { "$basedir/etc/nfsen.conf":
+        before  => Service['nfsen'],
         content => template('nfsen/nfsen.conf.erb'),
         ensure  => file,
-        before  => Service['nfsen']
+        require => Exec['install']
       }
 
       file { '/opt/nfsen':

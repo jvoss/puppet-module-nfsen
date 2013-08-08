@@ -385,8 +385,10 @@ sub VerifyFilter {
 # Query user for yes or no
 sub UserInput {
 	my $text = shift;
+        
+        # Modified for use with Puppet - JPV
+        my $answer = 'y';
 
-	my $answer = '';
 	while ( $answer !~ /^[y|n]$/ ) {
 		print "$text [y/n] ";
 		$answer = <STDIN>;
